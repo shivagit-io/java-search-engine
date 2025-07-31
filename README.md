@@ -1,88 +1,44 @@
-# 🔍 Java Servlet Search Engine
+# 🔍 Simple Search Engine (Java Servlet + JSP + Google Custom Search)
 
-A lightweight search engine built with **Java Servlets**, **JSP**, and **Google Custom Search API**, styled with JSP-based frontend. It includes pagination, caching, and a fallback to API when DB is empty.
+A lightweight, responsive search engine built using **Java Servlets**, **JSP**, and the **Google Programmable Search Engine JSON API**. This web application allows users to search for any keyword and view a clean, paginated list of results with titles, snippets, and thumbnails.
 
 ---
 
 ## 🚀 Features
 
-- ✅ Search via Google Custom Search API
-- ✅ Dynamic search results with titles, links, and descriptions
-- ✅ Pagination (5 results per page)
-- ✅ Fallback logic: API -> DB
-- ✅ JSP frontend with black & white gradient theme
-- ✅ Mobile-friendly layout
-- ✅ "Back to Home", voice search, and theme switcher
-- ✅ (Optional) MySQL DB Caching logic (disabled if API-only)
+- 🌐 Real-time web search using Google Custom Search API  
+- 🖼️ Displays result title, snippet, and thumbnail image  
+- 📦 Fallback support to local DB cache (optional)  
+- 🧩 Built with Java EE (Servlet + JSP)  
+- 🎨 Responsive frontend UI using HTML + CSS  
+- 🔐 API Key security via `.env` file
 
 ---
 
-## 📦 Tech Stack
+## 🛠️ Tech Stack
 
-- Java (Servlets + JSP)
-- Tomcat Server
-- Google Programmable Search JSON API
-- (Optional) MySQL + JDBC
+| Layer        | Technology                         |
+|--------------|-------------------------------------|
+| Backend      | Java Servlets, Java 11+             |
+| Frontend     | JSP, HTML5, CSS3                    |
+| API          | Google Programmable Search JSON API |
+| Build Tool   | Eclipse IDE / Apache Tomcat         |
+| Optional DB  | MySQL (for caching, optional)       |
 
 ---
 
 ## 📂 Folder Structure
-
-YourProject/
-├── src/
-│ └── com/search/
-│ ├── SearchServlet.java
-│ ├── SearchAPI.java
-│ └── (Optional) SearchDao.java
+SimpleSearchEngine/
+│
+├── src/com/search/
+│ ├── SearchAPI.java # Handles API calls
+│ └── SearchServlet.java # Main controller servlet
+│
 ├── WebContent/
-│ ├── index.jsp
-│ ├── results.jsp
-│ └── style.css
-├── .gitignore
-├── README.md
-└── .env (manually created)
-
-
----
-
-## 🔐 Setup: Environment Variables
-
-We use `.env` file to keep sensitive data (like API keys) secure. Make sure to **add `.env` to `.gitignore`**.
-
-```env
-API_KEY=your_google_api_key
-CX=your_custom_search_engine_id
-
-
-🛠️ How to Run Locally
-Clone the repo
-
-Open it in Eclipse or IntelliJ
-
-Configure Apache Tomcat
-
-Deploy the project
-
-Go to http://localhost:8080/YourProjectName/
-
-🙌 Author
-Made with ❤️ by [SHIVA]
-
-
-Replace:
-- Name:`Shiva`
-- Project Name:Search Engine`
-
----
-
-## ✅ 2. `.env` File for API Key Security
-
-**Create a new file named `.env`** in your root project directory and paste:
-
-```env
-API_KEY=AIzaSyXXXXXXYourAPIKeyHere
-CX=2341d98d8d01f41c8
-
-
-
+│ ├── index.jsp # UI: Search page
+│ ├── results.jsp # UI: Results display
+│ └── style.css # Styling
+│
+├── .env # Stores API Key & CX (not tracked)
+└── README.md
 
