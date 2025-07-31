@@ -114,18 +114,21 @@ API credentials are stored securely in .env
 ---
 
 🤝 Contributing
+
 Contributions are welcome! Open an issue or submit a pull request.
 
 ---
 
 📄 License
+
 This project is licensed under the MIT License.
 
 ---
 
 🙋 Author
-Shiva Kumar
-GitHub | LinkedIn
+**Shiva Kumar**
+
+🔗 [GitHub Profile](https://github.com/shivagit-io)
 
 
 ---
