@@ -28,19 +28,24 @@ A lightweight, responsive search engine built using **Java Servlets**, **JSP**, 
 ---
 
 ## 📂 Folder Structure
+<pre>
 SimpleSearchEngine/
-│
-├── src/com/search/
-│ ├── SearchAPI.java # Handles API calls
-│ └── SearchServlet.java # Main controller servlet
+├── src/
+│   └── com/search/
+│       ├── SearchAPI.java        # Handles API requests to Google Search
+│       └── SearchServlet.java    # Main controller servlet
 │
 ├── WebContent/
-│ ├── index.jsp # UI: Search page
-│ ├── results.jsp # UI: Results display
-│ └── style.css # Styling
+│   ├── index.jsp                 # Home search page
+│   ├── results.jsp               # Results display page
+│   └── style.css                 # Basic styling
 │
-├── .env # Stores API Key & CX (not tracked)
-└── README.md
+├── .env                          # Stores API key & CX (not tracked)
+├── .gitignore                    # Ignore .env and other sensitive files
+└── README.md                     # Project documentation
+</pre>
+
+---
 
 
 ---
@@ -111,8 +116,12 @@ API credentials are stored securely in .env
 🤝 Contributing
 Contributions are welcome! Open an issue or submit a pull request.
 
+---
+
 📄 License
 This project is licensed under the MIT License.
+
+---
 
 🙋 Author
 Shiva Kumar
