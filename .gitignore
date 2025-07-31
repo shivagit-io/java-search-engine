@@ -1,0 +1,10 @@
+/.settings/
+/.project
+/.classpath
+/target/
+/build/
+/bin/
+*.class
+*.log
+*.tmp
+*.env
