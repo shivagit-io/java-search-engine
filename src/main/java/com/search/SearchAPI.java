@@ -14,8 +14,8 @@ import org.json.JSONObject;
 
 public class SearchAPI {
 
-    private static final String API_KEY = "AIzaSyADZ98hKVRtFFL6ut0qdr_6_YzfDQyAsI4";
-    private static final String CX = "2341d98d8d01f41c8";
+    private static final String API_KEY = EnvLoader.get("API_KEY");
+    private static final String CX = EnvLoader.get("CX");
 
     public List<String[]> getResultsFromAPI(String keyword) throws IOException, InterruptedException {
         List<String[]> apiResults = new ArrayList<>();
@@ -24,8 +24,10 @@ public class SearchAPI {
 
         String encodedKeyword = URLEncoder.encode(keyword, java.nio.charset.StandardCharsets.UTF_8);
 
-        String url = String.format("https://www.googleapis.com/customsearch/v1?key=%s&cx=%s&q=%s",
-                API_KEY, CX, encodedKeyword);
+        String url = String.format(
+            "https://www.googleapis.com/customsearch/v1?key=%s&cx=%s&q=%s",
+            API_KEY, CX, encodedKeyword
+        );
 
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(url))
@@ -60,7 +62,6 @@ public class SearchAPI {
                 }
             }
 
-            // Now returning 4 fields: title, link, snippet, thumbnail
             apiResults.add(new String[]{title, link, snippet, thumbnail});
         }
 
