@@ -1,88 +1,137 @@
-# 🔍 Java Servlet Search Engine
+# 🔍 Simple Search Engine (Java Servlet + JSP + Google Custom Search)
 
-A lightweight search engine built with **Java Servlets**, **JSP**, and **Google Custom Search API**, styled with JSP-based frontend. It includes pagination, caching, and a fallback to API when DB is empty.
+A lightweight, responsive search engine built using **Java Servlets**, **JSP**, and the **Google Programmable Search Engine JSON API**. This web application allows users to search for any keyword and view a clean, paginated list of results with titles, snippets, and thumbnails.
 
 ---
 
 ## 🚀 Features
 
-- ✅ Search via Google Custom Search API
-- ✅ Dynamic search results with titles, links, and descriptions
-- ✅ Pagination (5 results per page)
-- ✅ Fallback logic: API -> DB
-- ✅ JSP frontend with black & white gradient theme
-- ✅ Mobile-friendly layout
-- ✅ "Back to Home", voice search, and theme switcher
-- ✅ (Optional) MySQL DB Caching logic (disabled if API-only)
+- 🌐 Real-time web search using Google Custom Search API  
+- 🖼️ Displays result title, snippet, and thumbnail image  
+- 📦 Fallback support to local DB cache (optional)  
+- 🧩 Built with Java EE (Servlet + JSP)  
+- 🎨 Responsive frontend UI using HTML + CSS  
+- 🔐 API Key security via `.env` file
 
 ---
 
-## 📦 Tech Stack
+## 🛠️ Tech Stack
 
-- Java (Servlets + JSP)
-- Tomcat Server
-- Google Programmable Search JSON API
-- (Optional) MySQL + JDBC
+| Layer        | Technology                         |
+|--------------|-------------------------------------|
+| Backend      | Java Servlets, Java 11+             |
+| Frontend     | JSP, HTML5, CSS3                    |
+| API          | Google Programmable Search JSON API |
+| Build Tool   | Eclipse IDE / Apache Tomcat         |
+| Optional DB  | MySQL (for caching, optional)       |
 
 ---
 
 ## 📂 Folder Structure
-
-YourProject/
+<pre>
+SimpleSearchEngine/
 ├── src/
-│ └── com/search/
-│ ├── SearchServlet.java
-│ ├── SearchAPI.java
-│ └── (Optional) SearchDao.java
+│   └── com/search/
+│       ├── SearchAPI.java        # Handles API requests to Google Search
+│       └── SearchServlet.java    # Main controller servlet
+│
 ├── WebContent/
-│ ├── index.jsp
-│ ├── results.jsp
-│ └── style.css
-├── .gitignore
-├── README.md
-└── .env (manually created)
+│   ├── index.jsp                 # Home search page
+│   ├── results.jsp               # Results display page
+│   └── style.css                 # Basic styling
+│
+├── .env                          # Stores API key & CX (not tracked)
+├── .gitignore                    # Ignore .env and other sensitive files
+└── README.md                     # Project documentation
+</pre>
+
+---
 
 
 ---
 
-## 🔐 Setup: Environment Variables
+## 🔐 Environment Setup
 
-We use `.env` file to keep sensitive data (like API keys) secure. Make sure to **add `.env` to `.gitignore`**.
+Create a `.env` file in your project root (not tracked by Git):
 
 ```env
 API_KEY=your_google_api_key
 CX=your_custom_search_engine_id
-
-
-🛠️ How to Run Locally
-Clone the repo
-
-Open it in Eclipse or IntelliJ
-
-Configure Apache Tomcat
-
-Deploy the project
-
-Go to http://localhost:8080/YourProjectName/
-
-🙌 Author
-Made with ❤️ by [SHIVA]
-
-
-Replace:
-- Name:`Shiva`
-- Project Name:Search Engine`
+```
 
 ---
 
-## ✅ 2. `.env` File for API Key Security
+🧪 How to Run
+1. Clone the Repository
+   git clone https://github.com/shivagit-io/java-search-engine.git
 
-**Create a new file named `.env`** in your root project directory and paste:
+2. Open in Eclipse IDE
+Import as a Dynamic Web Project
 
-```env
-API_KEY=AIzaSyXXXXXXYourAPIKeyHere
-CX=2341d98d8d01f41c8
+Add Tomcat Server Runtime
+
+3. Add Environment Variables
+Ensure your .env file is in the root and accessible from Java code. Use a library like dotenv-java or manually read the file.
+
+4. Run the App
+Right-click SearchServlet.java → Run on Server
+
+Open browser: http://localhost:8080/SimpleSearchEngine
+
+---
+
+🧾 Example Search
+Search for: Java Servlets
+
+Output:
+
+✅ Title of the webpage
+
+✅ Description/snippet
+
+✅ Image thumbnail
+
+✅ Link to original page
+
+---
+
+📈 Future Enhancements
+ Add database caching for offline searches
+
+ Implement pagination using API's start parameter
+
+ Add search history per session/user
+
+ Dark mode toggle
+
+ ---
+
+ 🛡️ Security Notes
+API credentials are stored securely in .env
+
+.env is ignored by Git via .gitignore
+
+---
+
+🤝 Contributing
+
+Contributions are welcome! Open an issue or submit a pull request.
+
+---
+
+📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+🙋 Author
+**Shiva Kumar**
+
+🔗 [GitHub Profile](https://github.com/shivagit-io)
 
 
+---
 
+Let me know if you want me to auto-generate the `LICENSE` file or `.env.example` too.
 
